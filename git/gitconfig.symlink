@@ -5,28 +5,43 @@
 [hub]
         protocol = https
 [user]
-        name = Zach Holman
-        email = zach@zachholman.com
+        name = Charles Bergeron
+        email = hello@charlesbergeron.ca
 [credential]
         helper = osxkeychain
 [alias]
         co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributers = !$ZSH/bin/git-rank-contributers
-        count   = !git shortlog -sn
+        aa = add --all
+        st = status
+        ci = commit
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [color]
         diff = auto
         status = auto
         branch = auto
         ui = true
+
+[color "branch"]
+        current = yellow reverse
+        local = yellow
+        remote = green
+
+[color "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+
+[color "status"]
+        added = yellow
+        changed = green
+        untracked = cyan
 [core]
         excludesfile = ~/.gitignore
-        editor = vim
+        editor = subl -w
+        quotepath = false
 [apply]
         whitespace = nowarn
-[mergetool]
-        keepBackup = false
 [difftool]
         prompt = false
 [help]

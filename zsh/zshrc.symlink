@@ -1,3 +1,11 @@
+# Everytime we cd into another directory, we ls as well
+function chpwd() {
+  emulate -L zsh
+  ls -a
+}
+
+
+
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
