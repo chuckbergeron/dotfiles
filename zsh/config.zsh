@@ -10,7 +10,7 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
 
-autoload -U $ZSH/zsh/functions/*(:t)
+autoload -U $ZSH_DOTFILES/zsh/functions/*(:t)
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
