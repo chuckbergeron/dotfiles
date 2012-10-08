@@ -4,7 +4,7 @@ alias edit_dotfiles="$EDITOR ~/.dotfiles"
 alias h="history"
 alias ls="ls -Al"
 
-alias reload_dotfiles="cd ~/.dotfiles && rake install"
+alias reload_dotfiles="cd ~/.dotfiles && rake_pure install"
 
 # Dir navigation aliases, to be replaced by z:
 # https://github.com/rupa/z
