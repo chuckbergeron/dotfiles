@@ -49,6 +49,7 @@ setopt EXTENDED_HISTORY
 setopt PROMPT_SUBST
 
 #setopt CORRECT
+unsetopt correct
 unsetopt correct_all
 
 # More extensive tab completion.
