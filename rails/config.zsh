@@ -9,6 +9,7 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=79000000
 
 alias rake="bundle exec rake"
+alias rake_pure="rake"
 alias guard="bundle exec guard"
 
 # Short for Rails Autotest

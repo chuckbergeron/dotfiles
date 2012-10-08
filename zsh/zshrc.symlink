@@ -1,7 +1,14 @@
+# TODO: Find a home for these functions
+
 # Everytime we cd into another directory, we ls as well
 function chpwd() {
   emulate -L zsh
-  ls -a
+  ls -Al
+}
+
+# Ruby, Rails, Gems
+edit_bundle_gems() {
+  rvm gemdir | xargs subl
 }
 
 # shortcut to this dotfiles path is $ZSH_DOTFILES
@@ -20,9 +27,25 @@ then
   source ~/.localrc
 fi
 
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/Users/chuckbergeron/.zshrc'
+autoload -Uz compinit
 compinit
 
 # load every completion after autocomplete loads
 # for config_file ($ZSH_DOTFILES/**/completion.zsh) source $config_file
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+COMPLETION_WAITING_DOTS="true"
+
+# if [[ -x "`whence -p dircolors`" ]]; then
+#   eval `dircolors`
+#   alias ls='ls -F --color=auto'
+# else
+#   alias ls='ls -F'
+# fi
+
+source ~/.oh-my-zsh/oh-my-zsh.sh
+
+. ~/bin/z.sh
