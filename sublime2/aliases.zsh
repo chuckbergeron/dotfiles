@@ -1,0 +1,1 @@
+alias et="subl ."
