@@ -1,5 +1,5 @@
 export ENVIRONMENT=development
-export RAILS_ENV=development
+# export RAILS_ENV=development
 export EDITOR="subl"
 
 export RUBY_HEAP_MIN_SLOTS=800000
