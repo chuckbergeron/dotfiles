@@ -20,6 +20,10 @@ export PROJECTS=~/Code
 # source every .zsh file in this rep
 for config_file ($ZSH_DOTFILES/**/*.zsh) source $config_file
 
+# Load and source all 'oh-my-zsh' files before changing the options
+# with config files below
+source ~/.oh-my-zsh/oh-my-zsh.sh
+
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
 if [[ -a ~/.localrc ]]
@@ -46,6 +50,6 @@ COMPLETION_WAITING_DOTS="true"
 #   alias ls='ls -F'
 # fi
 
-source ~/.oh-my-zsh/oh-my-zsh.sh
-
 . ~/bin/z.sh
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
