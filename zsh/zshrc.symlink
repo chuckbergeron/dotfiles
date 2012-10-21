@@ -6,11 +6,6 @@ function chpwd() {
   ls -Al
 }
 
-# Ruby, Rails, Gems
-edit_bundle_gems() {
-  rvm gemdir | xargs subl
-}
-
 # shortcut to this dotfiles path is $ZSH_DOTFILES
 export ZSH_DOTFILES=$HOME/.dotfiles
 
@@ -18,11 +13,11 @@ export ZSH_DOTFILES=$HOME/.dotfiles
 export PROJECTS=~/Code
 
 # source every .zsh file in this rep
-for config_file ($ZSH_DOTFILES/**/*.zsh) source $config_file
+#for config_file ($ZSH_DOTFILES/**/*.zsh) source $config_file
 
 # Load and source all 'oh-my-zsh' files before changing the options
 # with config files below
-source ~/.oh-my-zsh/oh-my-zsh.sh
+#source ~/.oh-my-zsh/oh-my-zsh.sh
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
@@ -33,7 +28,7 @@ fi
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/chuckbergeron/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
 compinit
 
@@ -43,13 +38,4 @@ compinit
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-# if [[ -x "`whence -p dircolors`" ]]; then
-#   eval `dircolors`
-#   alias ls='ls -F --color=auto'
-# else
-#   alias ls='ls -F'
-# fi
-
 . ~/bin/z.sh
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
