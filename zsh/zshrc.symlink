@@ -1,5 +1,3 @@
-# TODO: Find a home for these functions
-
 # Everytime we cd into another directory, we ls as well
 function chpwd() {
   emulate -L zsh
@@ -9,15 +7,12 @@ function chpwd() {
 # shortcut to this dotfiles path is $ZSH_DOTFILES
 export ZSH_DOTFILES=$HOME/.dotfiles
 
-# your project folder that we can `c [tab]` to
-export PROJECTS=~/Code
-
-# source every .zsh file in this rep
-#for config_file ($ZSH_DOTFILES/**/*.zsh) source $config_file
-
 # Load and source all 'oh-my-zsh' files before changing the options
 # with config files below
-#source ~/.oh-my-zsh/oh-my-zsh.sh
+source ~/.oh-my-zsh/oh-my-zsh.sh
+
+# source every .zsh file in this rep
+for config_file ($ZSH_DOTFILES/**/*.zsh) source $config_file
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
