@@ -7,10 +7,6 @@ function chpwd() {
 # shortcut to this dotfiles path is $ZSH_DOTFILES
 export ZSH_DOTFILES=$HOME/.dotfiles
 
-# Load and source all 'oh-my-zsh' files before changing the options
-# with config files below
-source ~/.oh-my-zsh/oh-my-zsh.sh
-
 # source every .zsh file in this rep
 for config_file ($ZSH_DOTFILES/**/*.zsh) source $config_file
 
@@ -34,3 +30,19 @@ compinit
 COMPLETION_WAITING_DOTS="true"
 
 . ~/bin/z.sh
+
+# Load and source all 'oh-my-zsh' files before changing the options
+# with config files below
+source ~/.oh-my-zsh/oh-my-zsh.sh
+
+### PROMPT
+# This overrides the ~/.oh-my-zsh/themes/wedisagree* stuff
+# The prompt
+PROMPT='%{$fg[blue]%}[%c] %{$reset_color%}'
+
+# The right-hand prompt
+
+RPROMPT='%{$fg[yellow]%}$(~/.rvm/bin/rvm-prompt)%{$reset_color%} %{$fg[blue]%}$(git_prompt_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}'
+
+# Add this at the start of RPROMPT to include rvm info showing ruby-version@gemset-name
+# %{$fg[yellow]%}$(~/.rvm/bin/rvm-prompt)%{$reset_color%}

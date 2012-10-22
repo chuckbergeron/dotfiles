@@ -1,8 +1,8 @@
-if [[ -n $SSH_CONNECTION ]]; then
-  export PS1='%m:%3~$(git_info_for_prompt)%# '
-else
-  export PS1='%3~$(git_info_for_prompt)%# '
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export PS1='%m:%3~$(git_info_for_prompt)%# '
+# else
+#   export PS1='%3~$(git_info_for_prompt)%# '
+# fi
 
 export EDITOR="subl"
 
@@ -14,19 +14,15 @@ ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# ZSH_THEME="af-magic"
+ZSH_THEME="wedisagree"
 
 autoload -U $ZSH_DOTFILES/zsh/functions/*(:t)
 
 HISTFILE=~/.histfile
 HISTSIZE=SAVEHIST=10000
 
-
 # Vim style shortcuts
 bindkey -v
-
 
 # don't nice background tasks
 setopt NO_BG_NICE
