@@ -1,5 +1,5 @@
 # Binary Paths
-export PATH=/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/texbin
+export PATH=/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/texbin
 export PATH=$PATH:/usr/X11/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:$HOME/bin
 
 # MySQL Path
