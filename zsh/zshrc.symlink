@@ -1,3 +1,9 @@
+# . ~/bin/z.sh
+
+#function precmd () {
+#  z --add "$(pwd -P)"
+#}
+
 # Everytime we cd into another directory, we ls as well
 function chpwd() {
   emulate -L zsh
@@ -28,8 +34,6 @@ compinit
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
-
-. ~/bin/z.sh
 
 # Load and source all 'oh-my-zsh' files before changing the options
 # with config files below

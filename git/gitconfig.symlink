@@ -5,8 +5,8 @@
 [hub]
         protocol = https
 [user]
-        name = Charles Bergeron
-        email = hello@charlesbergeron.ca
+	name = Charles Bergeron
+	email = charles@cloudclinic.ca
 [credential]
         helper = osxkeychain
 [alias]
@@ -37,7 +37,7 @@
         changed = green
         untracked = cyan
 [core]
-        excludesfile = ~/.gitignore
+	excludesfile = /Users/charlesbergeron/.gitignore
         editor = subl -w
         quotepath = false
 [apply]
@@ -46,3 +46,9 @@
         prompt = false
 [help]
         autocorrect = 1
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

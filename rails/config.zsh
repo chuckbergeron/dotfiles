@@ -19,7 +19,7 @@ alias rake_pure="/usr/bin/rake"
 alias bis="bundle install --binstubs"
 alias migdb="rake db:migrate && rake db:migrate RAILS_ENV='test'"
 alias seeddb="rake db:seed"
-alias reload_db="rake db:migrate:reset && rake db:seed"
+alias reload_db="rake db:drop && rake db:create:all && migdb"
 
 # Capiche is a plug-in written for Capistrano
 alias pull_remote_db="cap capiche:db:mirror && cap capiche:db:import"
