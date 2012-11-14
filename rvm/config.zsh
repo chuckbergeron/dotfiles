@@ -5,3 +5,6 @@ if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 ##
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# rvm --default 1.9.3 no worky?
+rvm use 1.9.3
