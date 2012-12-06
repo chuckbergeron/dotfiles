@@ -1,7 +1,7 @@
 alias b="bundle"
 alias r="bundle exec rails"
 alias rs="bundle exec rails server thin --debugger"
-alias g="git"
+#alias g="git"
 
 alias c2="cap deploy"
 alias c2mig="cap deploy:migrate"
