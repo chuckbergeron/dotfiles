@@ -1,5 +1,4 @@
 export ENVIRONMENT=development
-# export RAILS_ENV=development
 export EDITOR="subl"
 
 export RUBY_HEAP_MIN_SLOTS=800000
@@ -7,6 +6,7 @@ export RUBY_HEAP_FREE_MIN=100000
 export RUBY_HEAP_SLOTS_INCREMENT=300000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=79000000
+export RUBY_FREE_MIN=200000
 
 alias rake_pure="/usr/bin/rake"
 #alias rake="bundle exec rake"
@@ -22,7 +22,7 @@ alias bis="bundle install --binstubs"
 alias drop_dbs="rake db:drop:all"
 alias create_dbs="rake db:create:all"
 alias migrate_dbs="rake db:migrate && rake db:migrate RAILS_ENV='test'"
-alias reload_dbs="dropdbs && createdbs && migdbs && rake db:dev_setup"
+alias reload_dbs="drop_dbs && create_dbs && migrate_dbs && rake db:dev_setup"
 alias seed_dbs="rake db:seed"
 
 # Capiche is a plug-in written for Capistrano

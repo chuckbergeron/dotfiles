@@ -5,8 +5,8 @@
 [hub]
         protocol = https
 [user]
-	name = Charles Bergeron
-	email = chuck.bergeron@gmail.com
+        name = Charles Bergeron
+        email = chuck.bergeron@gmail.com
 [credential]
         helper = osxkeychain
 [alias]
@@ -14,6 +14,9 @@
         aa = add --all
         st = status
         ci = commit
+        di = diff
+        p = pull
+        f = fetch
         lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [color]
         diff = auto
@@ -37,7 +40,7 @@
         changed = green
         untracked = cyan
 [core]
-	excludesfile = ~/.gitignore
+        excludesfile = ~/.gitignore
         editor = subl -w
         quotepath = false
 [apply]
@@ -47,8 +50,8 @@
 [help]
         autocorrect = 1
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+        cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+        path =
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+        cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+        trustExitCode = true
