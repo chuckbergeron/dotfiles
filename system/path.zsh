@@ -17,3 +17,4 @@ export PATH=$PATH:~/.cabal/bin
 # Ruby Paths
 export PATH=$PATH:$HOME/.rvm/gems/ruby-1.8.7-p330/bin:$HOME/.rvm/gems/ruby-1.8.7-p330@global/bin
 export PATH=$PATH:$HOME/.rvm/rubies/ruby-1.8.7-p330/bin:$HOME/.rvm/bin
+
