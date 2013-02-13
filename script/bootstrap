@@ -5,5 +5,11 @@
 # Assume everyone's on OS X and run Homebrew (*nix-ers beware)
 . script/homebrew
 
+brew install zsh
+cd $HOME
+git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
+sudo chsh -s /usr/local/bin/zsh `whoami`
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
 # Run the install (I'd like to pull this out of rake, eventually)
 rake install
