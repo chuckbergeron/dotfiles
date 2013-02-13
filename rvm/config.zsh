@@ -8,3 +8,6 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # rvm --default 1.9.3 no worky?
 rvm use 1.9.3
+
+export ARCHFLAGS="-arch x86_64"
+export rvm_archflags="-arch x86_64"
