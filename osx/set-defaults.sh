@@ -429,8 +429,9 @@ defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\\U21a9"
 defaults write com.apple.terminal StringEncodings -array 4
 
 # Use a modified version of the Pro theme by default in Terminal.app
-open "$HOME/osx/charles.terminal"
-sleep 1 # Wait a bit to make sure the theme is loaded
+open "$HOME/.dotfiles/osx/charles.terminal"
+# Wait a bit to make sure the theme is loaded
+sleep 3 
 defaults write com.apple.terminal "Default Window Settings" -string "charles"
 defaults write com.apple.terminal "Startup Window Settings" -string "charles"
 

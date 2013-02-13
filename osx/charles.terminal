@@ -84,6 +84,8 @@
 	amVjdF8QD05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERojLTI3O0FIUF1kbG5wdYCJ
 	kZSdr7K3AAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAALk=
 	</data>
+	<key>Bell</key>
+	<false/>
 	<key>CursorColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -133,6 +135,10 @@
 	TlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSFBdZHBy
 	dHmEjZWYobO2uwAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAAC9
 	</data>
+	<key>UseBrightBold</key>
+	<true/>
+	<key>VisualBell</key>
+	<true/>
 	<key>name</key>
 	<string>Pro</string>
 	<key>shellExitAction</key>
