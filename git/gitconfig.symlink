@@ -10,19 +10,23 @@
 [credential]
         helper = osxkeychain
 [alias]
-        co = checkout
+	co = checkout
         aa = add --all
-        st = status
-        ci = commit
-        di = diff
+	st = status
+	ci = commit
+	di = diff
         p = pull
         f = fetch
         lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	br = branch
+	sta = stash
+	llog = log --date=local
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
+	interactive = auto
 
 [color "branch"]
         current = yellow reverse
@@ -40,11 +44,11 @@
         changed = green
         untracked = cyan
 [core]
-        excludesfile = ~/.gitignore
+	excludesfile = /Users/charlesbergeron/.gitignore_global
         editor = subl -w
         quotepath = false
 [apply]
-        whitespace = nowarn
+	whitespace = nowarn
 [difftool]
         prompt = false
 [help]
@@ -57,3 +61,5 @@
         trustExitCode = true
 [push]
 	default = simple
+[branch]
+	autosetupmerge = true

@@ -30,7 +30,5 @@ alias pull_remote_db="cap capiche:db:mirror && cap capiche:db:import"
 
 alias glocal="gem list --local"
 
-alias 186="rvm use system"
-alias 187="rvm use 1.8.7-p330"
-alias 191="rvm use 1.9.1-p376"
-alias 192="rvm use 1.9.2-head"
+alias 187="rvm use system"
+alias 193="rvm use 1.9.3-p385"
