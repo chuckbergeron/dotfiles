@@ -9,6 +9,8 @@ export RUBY_GC_MALLOC_LIMIT=79000000
 export RUBY_FREE_MIN=200000
 
 alias rake_pure="/usr/bin/rake"
+alias edit_last_migration="ls db/migrate/* | tail -n1 | xargs $EDITOR"
+
 #alias rake="bundle exec rake"
 #alias guard="bundle exec guard"
 
