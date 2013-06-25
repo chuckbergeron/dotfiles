@@ -1,5 +1,5 @@
 export ENVIRONMENT=development
-export EDITOR="subl"
+export EDITOR="subl -w"
 
 export RUBY_HEAP_MIN_SLOTS=800000
 export RUBY_HEAP_FREE_MIN=100000
@@ -32,5 +32,6 @@ alias pull_remote_db="cap capiche:db:mirror && cap capiche:db:import"
 
 alias glocal="gem list --local"
 
-alias 187="rvm use system"
-alias 193="rvm use 1.9.3-p385"
+# Zeus
+alias zs="zeus s"
+alias zc="zeus c"

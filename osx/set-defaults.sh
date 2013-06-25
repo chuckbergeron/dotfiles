@@ -17,10 +17,10 @@ nvram -p > /dev/null
 sudo nvram boot-args="-v"
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "Medeo Charles"
-sudo scutil --set HostName "Medeo Charles"
-sudo scutil --set LocalHostName "Medeo-Charles"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Medeo-Charles"
+sudo scutil --set ComputerName "charles"
+sudo scutil --set HostName "charles"
+sudo scutil --set LocalHostName "charles"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "charles"
 
 # Menu bar: disable transparency
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
