@@ -24,8 +24,9 @@ alias bis="bundle install --binstubs"
 alias drop_dbs="rake db:drop:all"
 alias create_dbs="rake db:create:all"
 alias migrate_dbs="rake db:migrate && rake db:migrate RAILS_ENV='test'"
-alias reload_dbs="drop_dbs && create_dbs && migrate_dbs && rake db:dev_setup"
 alias seed_dbs="rake db:seed"
+alias reload_dbs="drop_dbs && create_dbs && migrate_dbs && rake db:dev_setup"
+alias reload_handcrafted='drop_dbs && create_dbs && migrate_dbs && seed_dbs'
 
 # Capiche is a plug-in written for Capistrano
 alias pull_remote_db="cap capiche:db:mirror && cap capiche:db:import"
@@ -34,4 +35,5 @@ alias glocal="gem list --local"
 
 # Zeus
 alias zs="zeus s"
+alias zscafe="zeus s -b127.0.0.1"
 alias zc="zeus c"
