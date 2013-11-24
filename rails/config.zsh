@@ -20,7 +20,7 @@ alias edit_last_migration="ls db/migrate/* | tail -n1 | xargs $EDITOR"
 #alias sc="./script/console"
 
 alias bc="bundle check"
-alias bis="bundle install --binstubs"
+# alias bis="bundle install --binstubs"
 alias drop_dbs="rake db:drop:all"
 alias create_dbs="rake db:create:all"
 alias migrate_dbs="rake db:migrate && rake db:migrate RAILS_ENV='test'"
