@@ -53,6 +53,3 @@ RPROMPT='%{$fg[blue]%}$(git_prompt_info)%{$reset_color%}$(git_prompt_status)%{$r
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-
