@@ -39,6 +39,9 @@ COMPLETION_WAITING_DOTS="true"
 # with config files below
 source ~/.oh-my-zsh/oh-my-zsh.sh
 
+### Auto-correction can be super annoying
+setopt nocorrectall
+
 ### PROMPT
 # This overrides the ~/.oh-my-zsh/themes/wedisagree* stuff
 # The prompt
