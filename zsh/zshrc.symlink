@@ -51,5 +51,9 @@ RPROMPT='%{$fg[blue]%}$(git_prompt_info)%{$reset_color%}$(git_prompt_status)%{$r
 # Add this at the start of RPROMPT to include rvm info showing ruby-version@gemset-name
 # %{$fg[yellow]%}$(~/.rvm/bin/rvm-prompt)%{$reset_color%}
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
+
+# Tmuxinator
+source ~/bin/tmuxinator.zsh

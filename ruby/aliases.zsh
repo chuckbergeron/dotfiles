@@ -10,6 +10,6 @@ alias c2mig="cap deploy:migrate"
 alias follow_dev_log="tail -f log/development.log"
 alias grep_for_git_merge_conflicts="grep \" HEAD\" * -r --color"
 
-edit_rvm_gems() {
-  rvm gemdir | xargs subl
-}
+# edit_rvm_gems() {
+#   rvm gemdir | xargs subl
+# }
