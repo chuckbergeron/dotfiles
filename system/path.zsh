@@ -8,9 +8,6 @@ export PATH=$PATH:/usr/local/mysql/bin
 # Custom Mac OSX SSH Client Path
 export PATH=$PATH:$HOME/Library/OpenSSH/bin
 
-# Python Paths
-export PATH=$PATH:/usr/local/share/python
-
 # Haskell Paths
 export PATH=$PATH:~/.cabal/bin
 
