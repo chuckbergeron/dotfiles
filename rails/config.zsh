@@ -1,5 +1,5 @@
 export ENVIRONMENT=development
-export EDITOR="subl -w"
+export EDITOR="subl -n"
 
 export RUBY_GC_MALLOC_LIMIT=79000000
 export RUBY_GC_MALLOC_LIMIT=100000000

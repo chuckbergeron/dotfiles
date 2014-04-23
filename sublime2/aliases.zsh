@@ -1,1 +1,1 @@
-alias et="subl ."
+alias et="subl . -n"
