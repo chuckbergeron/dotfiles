@@ -1,7 +1,8 @@
 {
 	"auto_complete_commit_on_tab": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Color Scheme - Default/iLife 05.tmTheme",
+    # "color_scheme": "Packages/Color Scheme - Default/iLife 05.tmTheme",
+    "color_scheme": "Color Scheme - Default/base16-ocean.dark.tmTheme",
 	"detect_slow_plugins": false,
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
