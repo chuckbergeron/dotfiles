@@ -3,12 +3,21 @@ require 'irb/completion'
 require 'irb/ext/save-history'
 require 'rubygems'
 
+require "awesome_print"
+AwesomePrint.irb!
+
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 
 IRB.conf[:PROMPT_MODE] = :SIMPLE
 
 IRB.conf[:AUTO_INDENT] = true
+
+# returns the instance methods on klass 
+# that aren't already on Object
+def m(klass)
+  klass.public_instance_methods - Object.public_instance_methods
+end
 
 class Object
   # list methods which aren't in superclass
