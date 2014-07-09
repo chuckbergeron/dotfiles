@@ -1,6 +1,6 @@
-alias edit_profile="$EDITOR ~/.zshrc"
-alias reload_profile='. ~/.zshrc'
-alias edit_dotfiles="$EDITOR ~/.dotfiles"
+# alias ep="$EDITOR ~/.zshrc"
+# alias rp='. ~/.zshrc'
+alias ed="$EDITOR ~/.dotfiles"
 alias h="history"
 alias ls="ls -Al"
 
