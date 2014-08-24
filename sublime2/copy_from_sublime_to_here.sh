@@ -6,4 +6,3 @@ sublime_dir=~/Library/Application\ Support/Sublime\ Text\ 2/Packages
 
 rm -rf $ZSH_DOTFILES/sublime2/User
 cp -R "$sublime_dir/User" "$ZSH_DOTFILES/sublime2/User"
-cp -R "$sublime_dir/Color Scheme - Default/iLife 05.tmTheme" "$ZSH_DOTFILES/sublime2/"

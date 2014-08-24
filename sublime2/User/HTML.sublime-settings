@@ -1,6 +1,7 @@
 {
 	"extensions":
 	[
-		"liquid"
+		"liquid",
+		"hbs"
 	]
 }

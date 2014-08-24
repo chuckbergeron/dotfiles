@@ -1,11 +1,22 @@
 {
-	"auto_complete_commit_on_tab": true,
+	"auto_complete_commit_on_tab": false,
 	"bold_folder_labels": true,
+	"caret_style": "phase",
 	"color_scheme": "Packages/Color Scheme - Default/base16-ocean.dark.tmTheme",
-	"detect_slow_plugins": false,
+	"detect_slow_plugins": true,
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
+		"app-*.js",
+		"app-*.js.gz",
+		"app-*.css",
+		"app-*.css.gz",
+		"application-*.js",
+		"application-*.js.gz",
+		"application-*.css",
+		"application-*.css.gz",
+		".sql",
+		".sql.bz2",
 		".DS_Store",
 		".tags*",
 		"*.pyc",
@@ -27,10 +38,17 @@
 		"*.class",
 		"*.psd",
 		"*.db",
-		"*.pdf"
+		"*.pdf",
+		"*.sql",
+		"*.sql.bz2"
 	],
 	"folder_exclude_patterns":
 	[
+		"app/assets/fonts",
+		"core/client",
+		".rsync_cache",
+		"coverage",
+		"_site",
 		"data",
 		".git",
 		".svn",
@@ -41,31 +59,27 @@
 		"bundle",
 		".rbx",
 		"bin",
-		"script",
-		"tmp"
+		"tmp",
+		"public/assets"
 	],
 	"font_face": "Monaco",
-	"font_size": 17.0,
+	"font_size": 16.0,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
-	"ignored_packages":
-	[
-		"Vintage",
-		"Git"
-	],
-	"line_padding_bottom": 0.5,
-	"line_padding_top": 0.5,
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
 	"new_window_settings":
 	{
 		"show_minimap": false
 	},
 	"rulers":
 	[
-		100
+		97
 	],
 	"save_on_focus_lost": true,
+	"spacegray_tabs_xlarge": true,
 	"tab_size": 2,
-	"theme": "Soda Light.sublime-theme",
+	"theme": "Spacegray.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }

@@ -3,5 +3,6 @@
   { "keys": ["ctrl+shift+j"], "command": "prettify_json" },
   { "keys": ["super+ctrl+w"], "command": "close_all" },
   { "keys": ["super+v"], "command": "paste_and_indent" },
-  { "keys": ["super+shift+v"], "command": "paste" }
+  { "keys": ["super+shift+v"], "command": "paste" },
+  { "keys": ["super+shift+r"], "command": "reindent" }
 ]
