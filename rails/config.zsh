@@ -13,7 +13,7 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 
 alias be="bundle exec "
 alias bc="bundle check"
-alias edl="ls db/migrate/* | tail -n1 | xargs $EDITOR"
+alias elm="ls db/migrate/* | tail -n1 | xargs $EDITOR"
 
 alias drop_dbs="rake db:drop:all"
 alias create_dbs="rake db:create:all"
