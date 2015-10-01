@@ -17,7 +17,7 @@ alias elm="ls db/migrate/* | tail -n1 | xargs $EDITOR"
 
 alias drop_dbs="rake db:drop:all"
 alias create_dbs="rake db:create:all"
-alias migrate_dbs="rake db:migrate && rake db:migrate RAILS_ENV='test'"
+alias migrate_db="rake db:migrate"
 alias seed_dbs="rake db:seed"
 alias reload_dbs="drop_dbs && create_dbs && migrate_dbs && rake db:dev_setup"
 alias reload_handcrafted='drop_dbs && create_dbs && migrate_dbs && seed_dbs'

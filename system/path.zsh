@@ -16,3 +16,6 @@ export PATH=$PATH:/usr/local/mysql/bin
 
 # Ruby Paths
 export PATH=$PATH:/usr/local/share/npm/bin
+
+# ImageMagick
+export PATH=$PATH:/opt/ImageMagick/bin
