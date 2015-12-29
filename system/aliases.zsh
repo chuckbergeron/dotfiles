@@ -10,3 +10,4 @@ then
 fi
 
 alias ....="cd ../../.."
+alias killcoreaudio="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
