@@ -66,3 +66,4 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # DirEnv for Spring Rails / PATH changes when `cd`-ing
 eval "$(direnv hook $0)"
+
