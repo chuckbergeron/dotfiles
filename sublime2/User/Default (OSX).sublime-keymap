@@ -1,8 +1,10 @@
 [
-  { "keys": ["ctrl+shift+x"], "command": "tidy_xml" },
-  { "keys": ["ctrl+shift+j"], "command": "prettify_json" },
+  { "keys": ["ctrl+g"], "command": "find_next" },
+  { "keys": ["ctrl+t"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
   { "keys": ["super+ctrl+w"], "command": "close_all" },
   { "keys": ["super+v"], "command": "paste_and_indent" },
   { "keys": ["super+shift+v"], "command": "paste" },
-  { "keys": ["super+shift+r"], "command": "reindent" }
+  { "keys": ["super+shift+r"], "command": "reindent" },
+  { "keys": ["ctrl+tab"], "command": "next_view" },
+  { "keys": ["ctrl+shift+tab"], "command": "prev_view" }
 ]
