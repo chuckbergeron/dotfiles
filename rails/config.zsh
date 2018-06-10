@@ -15,12 +15,11 @@ alias be="bundle exec "
 alias bc="bundle check"
 alias elm="ls db/migrate/* | tail -n1 | xargs $EDITOR"
 
-alias drop_dbs="rake db:drop:all"
-alias create_dbs="rake db:create:all"
-alias migrate_db="rake db:migrate"
-alias seed_dbs="rake db:seed"
-alias reload_dbs="drop_dbs && create_dbs && migrate_dbs && rake db:dev_setup"
-alias reload_handcrafted='drop_dbs && create_dbs && migrate_dbs && seed_dbs'
+alias drop_dbs="rails db:drop:all"
+alias create_dbs="rails db:create:all"
+alias migrate_db="rails db:migrate"
+alias seed_dbs="rails db:seed"
+alias reload_dbs="drop_dbs && create_dbs && migrate_dbs && rails db:dev_setup"
 
 # Capiche is a plug-in written for Capistrano
 alias pull_remote_db="cap capiche:db:mirror && cap capiche:db:import"

@@ -32,13 +32,6 @@ compinit
 # load every completion after autocomplete loads
 # for config_file ($ZSH_DOTFILES/**/completion.zsh) source $config_file
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
-
-# Load and source all 'oh-my-zsh' files before changing the options
-# with config files below
-source ~/.oh-my-zsh/oh-my-zsh.sh
-
 ### Auto-correction can be super annoying
 setopt nocorrectall
 
@@ -48,23 +41,40 @@ setopt nocorrectall
 PROMPT='%{$fg[blue]%}[%c] %{$reset_color%}'
 
 # The right-hand prompt
-
 RPROMPT='%{$fg[blue]%}$(git_prompt_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}'
-
-# Add this at the start of RPROMPT to include rvm info showing ruby-version@gemset-name
-# %{$fg[yellow]%}$(~/.rvm/bin/rvm-prompt)%{$reset_color%}
-
-
-export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
-
-# Tmuxinator
-source ~/bin/tmuxinator.zsh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# DirEnv for Spring Rails / PATH changes when `cd`-ing
+### DirEnv for PATH changes when `cd`-ing
 eval "$(direnv hook $0)"
 
-# source /usr/local/opt/chruby/share/chruby/chruby.sh
+### Node to PATH
+export PATH="/usr/local/opt/node@8/bin:$PATH"
+
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(
+  brew
+  dirhistory
+  docker
+  gitfast
+  git-extras
+  git_remote_branch
+  npm
+  osx
+  sublime
+  urltools
+  web-search
+  yarn
+)
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+COMPLETION_WAITING_DOTS="true"
+
+HIST_STAMPS="yyyy-mm-dd"
+
+# Load and source all 'oh-my-zsh' files
+source ~/.oh-my-zsh/oh-my-zsh.sh
