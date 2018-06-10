@@ -35,14 +35,6 @@ compinit
 ### Auto-correction can be super annoying
 setopt nocorrectall
 
-### PROMPT
-# This overrides the ~/.oh-my-zsh/themes/wedisagree* stuff
-# The prompt
-PROMPT='%{$fg[blue]%}[%c] %{$reset_color%}'
-
-# The right-hand prompt
-RPROMPT='%{$fg[blue]%}$(git_prompt_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}'
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -78,3 +70,15 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # Load and source all 'oh-my-zsh' files
 source ~/.oh-my-zsh/oh-my-zsh.sh
+
+### PROMPT
+# This overrides the ~/.oh-my-zsh/themes/wedisagree* stuff
+# The prompt
+PROMPT='%{$fg[cyan]%}[%c] %{$reset_color%}'
+# The right-hand prompt
+RPROMPT='%{$fg[blue]%}$(git_prompt_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}'
+export ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[Magenta]%}"
+export ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%} ✖" # Ⓓ
+export ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✱" # ⓣ
+export ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%} ✔" # Ⓞ
+export ZSH_THEME_GIT_PROMPT_MODIFIED=""  # ⓜ ⑁
