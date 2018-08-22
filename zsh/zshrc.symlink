@@ -4,6 +4,14 @@
 #  z --add "$(pwd -P)"
 #}
 
+function export_aws_profile() {
+  profile=$1
+  profile=${profile:-default}
+  echo "Exporting AWS profile $profile..."
+  export AWS_ACCESS_KEY_ID=`aws configure get aws_access_key_id --profile ${profile}`
+  export AWS_SECRET_ACCESS_KEY=`aws configure get aws_secret_access_key --profile ${profile}`
+}
+
 # Everytime we cd into another directory, we ls as well
 function chpwd() {
   emulate -L zsh
@@ -82,3 +90,8 @@ export ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%} ✖" # Ⓓ
 export ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✱" # ⓣ
 export ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%} ✔" # Ⓞ
 export ZSH_THEME_GIT_PROMPT_MODIFIED=""  # ⓜ ⑁
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
