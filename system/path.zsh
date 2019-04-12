@@ -18,7 +18,7 @@ export PATH=$PATH:/usr/local/mysql/bin
 # export PATH=$PATH:~/.cabal/bin
 
 # Ruby Paths
-export PATH=$PATH:~/.gem/ruby/2.3.1/bin
+export PATH=$PATH:~/.gem/ruby/2.5.1/bin/
 
 # ImageMagick
 export PATH=$PATH:/opt/ImageMagick/bin

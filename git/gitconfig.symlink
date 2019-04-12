@@ -45,8 +45,9 @@
         untracked = cyan
 [core]
 	excludesfile = /Users/charlesbergeron/.gitignore_global
-        editor = subl -n -w
+        editor = atom
         quotepath = false
+	trustctime = false
 [apply]
 	whitespace = nowarn
 [difftool]
@@ -62,4 +63,8 @@
 [push]
 	default = current
 [branch]
-        autosetuprebase = always
+  autosetuprebase = always
+
+[pager]
+   diff = diff-so-fancy | less --tabs=1,5 -RFX
+   show = diff-so-fancy | less --tabs=1,5 -RFX
