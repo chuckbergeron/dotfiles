@@ -1,1 +1,1 @@
-alias et="atom ."
+alias et="code ."

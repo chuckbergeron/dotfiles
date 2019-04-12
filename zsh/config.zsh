@@ -4,7 +4,7 @@
 #   export PS1='%3~$(git_info_for_prompt)%# '
 # fi
 
-export EDITOR="atom"
+export EDITOR="code"
 
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true

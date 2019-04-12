@@ -56,7 +56,6 @@ plugins=(
   git_remote_branch
   npm
   osx
-  atom
   urltools
   web-search
   yarn

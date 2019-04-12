@@ -45,7 +45,7 @@
         untracked = cyan
 [core]
 	excludesfile = /Users/charlesbergeron/.gitignore_global
-        editor = atom
+        editor = code
         quotepath = false
 	trustctime = false
 [apply]
