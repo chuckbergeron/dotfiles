@@ -1,17 +1,5 @@
 # . ~/bin/z.sh
 
-#function precmd () {
-#  z --add "$(pwd -P)"
-#}
-
-function export_aws_profile() {
-  profile=$1
-  profile=${profile:-default}
-  echo "Exporting AWS profile $profile..."
-  export AWS_ACCESS_KEY_ID=`aws configure get aws_access_key_id --profile ${profile}`
-  export AWS_SECRET_ACCESS_KEY=`aws configure get aws_secret_access_key --profile ${profile}`
-}
-
 # Everytime we cd into another directory, we ls as well
 function chpwd() {
   emulate -L zsh
@@ -20,7 +8,6 @@ function chpwd() {
 
 # shortcut to this dotfiles path is $ZSH_DOTFILES
 export ZSH_DOTFILES=$HOME/.dotfiles
-
 
 
 # End of lines configured by zsh-newuser-install
@@ -34,9 +21,6 @@ compinit
 
 ### Auto-correction can be super annoying
 setopt nocorrectall
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
 ### DirEnv for PATH changes when `cd`-ing
 eval "$(direnv hook $0)"
@@ -86,10 +70,9 @@ export ZSH_THEME_GIT_PROMPT_MODIFIED=""  # ⓜ ⑁
 
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source /usr/local/opt/nvm/nvm.sh
+# nvm use v10.20.1
 
-nvm use default
 export PATH=$PATH:/Users/chuckbergeron/Library/Android/sdk/platform-tools/
 
 # use .localrc for SUPER SECRET CRAP that you don't
@@ -98,4 +81,20 @@ if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
 fi
-export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
+
+cd /Users/chuckbergeron/Git/crypto/pool-together
+
+
+
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+load-nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use
+  elif [[ $(nvm version) != $(nvm version default)  ]]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc

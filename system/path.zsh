@@ -1,5 +1,5 @@
 # For ruby gem 'Spring' binstubs
-export PATH=./bin:$PATH
+export PATH=~/Dropbox/bin:./bin:$PATH
 
 # Binary Paths
 export PATH=/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/texbin

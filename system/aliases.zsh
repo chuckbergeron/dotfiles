@@ -16,3 +16,8 @@ alias enable_spotlight_indexing="sudo launchctl unload -w /System/Library/Launch
 alias disable_spotlight_indexing="sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
 
 alias et="code ."
+
+alias builder="cd /Users/chuckbergeron/Git/crypto/pool-together/pooltogether-pool-builder-ui"
+alias ref="cd /Users/chuckbergeron/Git/crypto/pool-together/pooltogether-reference-pool-ui"
+alias flagship="cd /Users/chuckbergeron/Git/crypto/pool-together/pool-app"
+alias vote="cd /Users/chuckbergeron/Git/crypto/pool-together/pooltogether-vote-ui"
