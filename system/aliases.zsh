@@ -18,6 +18,10 @@ alias disable_spotlight_indexing="sudo launchctl load -w /System/Library/LaunchD
 alias et="code ."
 
 alias builder="cd /Users/chuckbergeron/Git/crypto/pool-together/pooltogether-pool-builder-ui"
-alias ref="cd /Users/chuckbergeron/Git/crypto/pool-together/pooltogether-reference-pool-ui"
+alias community="cd /Users/chuckbergeron/Git/crypto/pool-together/pooltogether-community-ui"
+alias ref="cd /Users/chuckbergeron/Git/crypto/pool-together/pooltogether-community-ui"
 alias flagship="cd /Users/chuckbergeron/Git/crypto/pool-together/pool-app"
-alias vote="cd /Users/chuckbergeron/Git/crypto/pool-together/pooltogether-vote-ui"
+alias vote="cd /Users/chuckbergeron/Git/crypto/pool-together/pooltogether-governance-ui"
+alias gov="cd /Users/chuckbergeron/Git/crypto/pool-together/pooltogether-governance-ui"
+alias pods="cd /Users/chuckbergeron/Git/crypto/pool-together/pooltogether-pods-ui"
+alias api="cd /Users/chuckbergeron/Git/crypto/pool-together/api"

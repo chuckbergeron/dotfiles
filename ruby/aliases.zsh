@@ -1,7 +1,8 @@
 alias b="bundle"
 alias r="rails"
 alias rs="rails server -b127.0.0.1"
-alias g="git"
+# alias g="git"
+compdef g='git'
 
 alias c2="cap deploy"
 alias c2mig="cap deploy:migrate"
