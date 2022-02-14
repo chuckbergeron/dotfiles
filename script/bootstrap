@@ -8,7 +8,7 @@
 brew install zsh
 cd $HOME
 git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
-sudo chsh -s /usr/local/bin/zsh `whoami`
+sudo chsh -s /bin/zsh `whoami`
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 # Run the install (I'd like to pull this out of rake, eventually)
