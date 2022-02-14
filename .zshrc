@@ -35,7 +35,6 @@
 #plugins=(
 #  gitfast
 #  git-extras
-#  git_remote_branch
 #  jsontools
 #)
 

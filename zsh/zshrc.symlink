@@ -37,9 +37,8 @@ plugins=(
   docker
   gitfast
   git-extras
-  git_remote_branch
   npm
-  osx
+  macos
   urltools
   web-search
   yarn
@@ -69,11 +68,12 @@ export ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%} ✔" # Ⓞ
 export ZSH_THEME_GIT_PROMPT_MODIFIED=""  # ⓜ ⑁
 
 
-export NVM_DIR="$HOME/.nvm"
-source /usr/local/opt/nvm/nvm.sh
-# nvm use v10.20.1
 
-export PATH=$PATH:/Users/chuckbergeron/Library/Android/sdk/platform-tools/
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH=$PATH:~/Library/Android/sdk/platform-tools/
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
@@ -82,7 +82,7 @@ then
   source ~/.localrc
 fi
 
-cd /Users/chuckbergeron/Git/crypto/pool-together
+cd ~/Git/crypto/pool-together
 
 
 
@@ -100,3 +100,6 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
