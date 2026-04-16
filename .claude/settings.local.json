@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(time zsh *)",
+      "Bash(zsh -i -c 'zprof')",
+      "Bash(zsh --no-rcs -c 'zmodload zsh/zprof; source ~/.zshrc; zprof'We're in the dot.)"
+    ]
+  }
+}

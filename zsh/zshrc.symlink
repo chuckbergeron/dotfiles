@@ -1,5 +1,3 @@
-source ~/.nvm/nvm.sh
-
 # Everytime we cd into another directory, we ls as well
 function chpwd() {
   emulate -L zsh
@@ -71,8 +69,18 @@ export ZSH_THEME_GIT_PROMPT_MODIFIED=""  # ⓜ ⑁
 
 
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# Lazy-load nvm — only initializes on first use of nvm/node/npm/npx
+_load_nvm() {
+  unset -f nvm node npm npx yarn
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+}
+nvm()  { _load_nvm; nvm "$@"; }
+node() { _load_nvm; node "$@"; }
+npm()  { _load_nvm; npm "$@"; }
+npx()  { _load_nvm; npx "$@"; }
+yarn() { _load_nvm; yarn "$@"; }
 
 export PATH=$PATH:~/Library/Android/sdk/platform-tools/
 
@@ -83,12 +91,11 @@ then
   source ~/.localrc
 fi
 
-cd ~/Git/crypto/pool-together
+# cd ~/Git/crypto/pool-together
 
 
 
 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
@@ -99,6 +106,11 @@ export PATH="$PATH:/Users/chuckb/.foundry/bin:$HOME/.cargo/bin:$HOME/.local/shar
 autoload -U add-zsh-hook
 
 load-nvmrc() {
+  # Skip if nvm isn't loaded yet
+  if ! type nvm_find_nvmrc &>/dev/null; then
+    return
+  fi
+
   local nvmrc_path
   nvmrc_path="$(nvm_find_nvmrc)"
 
@@ -118,4 +130,11 @@ load-nvmrc() {
 }
 
 add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+# pnpm
+export PNPM_HOME="/Users/chuckb/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export PATH="$HOME/.local/bin:$PATH"
