@@ -138,3 +138,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 export PATH="$HOME/.local/bin:$PATH"
+
+# Claude wants this for git push:
+export SSH_AUTH_SOCK="$HOME/Library/Containers/com.apple.ssh-agent/Documents/sockets/com.apple.ssh-agent"
