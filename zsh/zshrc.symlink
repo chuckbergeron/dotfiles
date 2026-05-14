@@ -70,17 +70,26 @@ export ZSH_THEME_GIT_PROMPT_MODIFIED=""  # ⓜ ⑁
 
 export NVM_DIR="$HOME/.nvm"
 
-# Lazy-load nvm — only initializes on first use of nvm/node/npm/npx
+# Expose the default node version on PATH for sub-shells (scripts, Claude Code, etc.)
+# that don't get zsh function definitions inherited from the parent shell.
+# nvm aliases can be partial (e.g. "20"), so we find the latest matching installed version.
+if [ -f "$NVM_DIR/alias/default" ]; then
+  _nvm_spec="$(cat "$NVM_DIR/alias/default")"
+  _nvm_resolved="$(ls -1 "$NVM_DIR/versions/node/" 2>/dev/null \
+    | grep -E "^v?${_nvm_spec}(\.|$)" | sort -t. -k1,1V -k2,2n -k3,3n | tail -1)"
+  if [ -n "$_nvm_resolved" ] && [ -d "$NVM_DIR/versions/node/$_nvm_resolved/bin" ]; then
+    export PATH="$NVM_DIR/versions/node/$_nvm_resolved/bin:$PATH"
+  fi
+  unset _nvm_spec _nvm_resolved
+fi
+
+# Lazy-load nvm — node/npm/npx/yarn are on PATH directly via the block above
 _load_nvm() {
-  unset -f nvm node npm npx yarn
+  unset -f nvm
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 }
-nvm()  { _load_nvm; nvm "$@"; }
-node() { _load_nvm; node "$@"; }
-npm()  { _load_nvm; npm "$@"; }
-npx()  { _load_nvm; npx "$@"; }
-yarn() { _load_nvm; yarn "$@"; }
+nvm() { _load_nvm; nvm "$@"; }
 
 export PATH=$PATH:~/Library/Android/sdk/platform-tools/
 
