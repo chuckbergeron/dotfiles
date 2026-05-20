@@ -1,7 +1,7 @@
 alias ni='npm install'
 alias nig='npm install -g'
 alias nrs='npm run start'
-alias nrd='npm run dev'
+alias nrd='rm -rf .next && npm run dev'
 alias nrb='npm run build'
 alias naf='npm audit fix'
 alias nu='npm update'

@@ -1,10 +1,11 @@
 alias g="git"
 alias gfetch="git co master; git co main; git fetch && git pull --rebase"
 alias gpo="git push origin"
-# alias prune_local_branches="git branch --merged master | grep -v 'master$' | xargs git branch -d"
-prune_branches_like() {
-    git branch --merged $1 | grep -v "\*\|$1" | xargs -n 1 git branch -d
+prune_gone_branches_like() {
+  git fetch --prune
+  git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
 }
-alias prune_like_master="prune_branches_like master"
-alias prune_like_develop="prune_branches_like develop"
-alias prune_like_staging="prune_branches_like staging"
+alias prune_like_master="prune_gone_branches_like master"
+alias prune_like_main="prune_gone_branches_like main"
+alias prune_like_develop="prune_gone_branches_like develop"
+alias prune_like_staging="prune_gone_branches_like staging"
