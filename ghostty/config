@@ -1,0 +1,61 @@
+# Ghostty config, mirrors Terminal.app "Clear Dark" profile
+
+# Font (Terminal.app: GoogleSansCode-Regular 14pt)
+font-family = Google Sans Code
+font-size = 14
+
+# Window / background (Terminal.app: 98% opacity, blur enabled)
+background-opacity = 0.98
+background-blur = true
+
+# Base colors
+background = #191D27
+foreground = #E0E0E0
+cursor-color = #E2E2E2
+selection-background = #273D4C
+selection-foreground = #E0E0E0
+
+# Cursor (Terminal.app: block, blinking)
+cursor-style = block
+cursor-style-blink = true
+
+# ANSI 0-7
+palette = 0=#212C3B
+palette = 1=#CC2735
+palette = 2=#00C77A
+palette = 3=#D1AC45
+palette = 4=#29BBF5
+palette = 5=#CE16DE
+palette = 6=#43E4CD
+palette = 7=#DEE5EB
+
+# Bright 8-15
+palette = 8=#3A445A
+palette = 9=#EC0013
+palette = 10=#24D86D
+palette = 11=#EFB413
+palette = 12=#00C0FC
+palette = 13=#EB3BF0
+palette = 14=#2EFFCA
+palette = 15=#E5EFF5
+
+# Terminal.app: UseBrightBold, bold text renders in the bright ANSI variant
+bold-color = bright
+
+# Terminal.app: FontAntialias = 1, which applies Core Text stem dilation.
+# Ghostty skips this by default, so glyphs render thinner. Drop
+# font-thicken-strength (0-255) below 255 if this ends up too heavy.
+font-thicken = true
+
+# Window size (Terminal.app: 211x47)
+window-height = 47
+window-width = 211
+
+# macOS niceties
+macos-option-as-alt = true
+window-save-state = always
+
+# Terminal.app parity: Select Previous/Next Tab
+# (Ghostty only binds cmd+shift+[ / ] out of the box)
+keybind = super+shift+arrow_left=previous_tab
+keybind = super+shift+arrow_right=next_tab
