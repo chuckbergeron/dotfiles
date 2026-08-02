@@ -11,5 +11,8 @@ export PATH=/usr/local/opt/openssl/bin:$PATH
 export PATH=$PATH:./node_modules/.bin
 # alias npm-exec='PATH=$(npm bin):$PATH'
 
-# BREW
-export PATH=$PATH:/opt/homebrew/bin
+# BREW — must come before /usr/bin so Homebrew tools (incl. python3) win
+export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
+
+# Make `python3`/`pip3` resolve to Homebrew's python@3.12 (needed by ledfx)
+export PATH=/opt/homebrew/opt/python@3.12/libexec/bin:$PATH
