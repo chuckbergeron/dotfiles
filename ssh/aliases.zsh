@@ -1,1 +1,1 @@
-alias copy_public_key="cat ~/.ssh/id_rsa.pub | pbcopy"
+alias copy_public_key="pbcopy < ~/.ssh/id_ed25519.pub"
