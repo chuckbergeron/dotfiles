@@ -108,7 +108,7 @@ fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-export PATH="$PATH:/Users/chuckbergeron/.foundry/bin:$HOME/.cargo/bin:$HOME/.local/share/solana/install/active_release/bin"
+export PATH="$PATH:$HOME/.foundry/bin:$HOME/.cargo/bin:$HOME/.local/share/solana/install/active_release/bin"
 
 
 # place this after nvm initialization!
@@ -140,7 +140,7 @@ load-nvmrc() {
 
 add-zsh-hook chpwd load-nvmrc
 # pnpm
-export PNPM_HOME="/Users/chuckbergeron/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;

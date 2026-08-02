@@ -1,3 +1,6 @@
 sublime2/User/Package\ Control.sublime-settings
 vim/vim.symlink/.netrwhist
 .DS_Store
+
+# Machine-local Claude Code state, not meant to be shared
+.claude/settings.local.json

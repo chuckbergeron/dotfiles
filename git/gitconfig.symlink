@@ -6,7 +6,7 @@
         protocol = https
 [user]
         name = Charles Bergeron
-        email = chuck.bergeron@gmail.com
+        email = 35717+chuckbergeron@users.noreply.github.com
 [credential]
         helper = osxkeychain
 [alias]
@@ -44,7 +44,7 @@
         changed = green
         untracked = cyan
 [core]
-	excludesfile = /Users/charlesbergeron/.gitignore_global
+	excludesfile = ~/.gitignore_global
         editor = vim
         quotepath = false
 	trustctime = false
