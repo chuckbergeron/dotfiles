@@ -86,10 +86,13 @@ fi
 # Lazy-load nvm — node/npm/npx/yarn are on PATH directly via the block above
 _load_nvm() {
   unset -f nvm
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 }
-nvm() { _load_nvm; nvm "$@"; }
+# Only install the stub if the real nvm isn't already loaded (.zprofile loads it in login shells)
+if ! type nvm_find_nvmrc &>/dev/null; then
+  nvm() { _load_nvm; nvm "$@"; }
+fi
 
 export PATH=$PATH:~/Library/Android/sdk/platform-tools/
 
