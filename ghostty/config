@@ -20,23 +20,23 @@ cursor-style = block
 cursor-style-blink = true
 
 # ANSI 0-7
-palette = 0=#212C3B
-palette = 1=#CC2735
+palette = 0=#616C7B
+palette = 1=#FC6735
 palette = 2=#00C77A
 palette = 3=#D1AC45
 palette = 4=#29BBF5
 palette = 5=#CE16DE
-palette = 6=#43E4CD
+palette = 6=#00F8F0
 palette = 7=#DEE5EB
 
 # Bright 8-15
-palette = 8=#3A445A
-palette = 9=#EC0013
+palette = 8=#6A748A
+palette = 9=#FC6013
 palette = 10=#24D86D
 palette = 11=#EFB413
 palette = 12=#00C0FC
 palette = 13=#EB3BF0
-palette = 14=#2EFFCA
+palette = 14=#00F8F0
 palette = 15=#E5EFF5
 
 # Terminal.app: UseBrightBold, bold text renders in the bright ANSI variant
