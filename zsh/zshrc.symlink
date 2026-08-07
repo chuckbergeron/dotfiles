@@ -118,7 +118,11 @@ export PATH="$PATH:$HOME/.foundry/bin:$HOME/.cargo/bin:$HOME/.local/share/solana
 autoload -U add-zsh-hook
 
 load-nvmrc() {
-  # Skip if nvm isn't loaded yet
+  # Force-load nvm if it isn't loaded yet (non-login shells skip .zprofile)
+  if ! type nvm_find_nvmrc &>/dev/null; then
+    _load_nvm
+  fi
+  # Still unavailable, meaning nvm isn't installed, so nothing to do
   if ! type nvm_find_nvmrc &>/dev/null; then
     return
   fi
@@ -142,6 +146,9 @@ load-nvmrc() {
 }
 
 add-zsh-hook chpwd load-nvmrc
+# Run once for the starting directory. The chpwd hook only fires on `cd`, so a
+# new tab that opens directly inside a project would otherwise stay on default.
+load-nvmrc
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
