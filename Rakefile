@@ -5,6 +5,10 @@ require 'rake'
 # XDG-style targets are listed explicitly. Add a line per new app.
 XDG_LINKS = {
   'ghostty/config' => '.config/ghostty/config',
+  # Only config is tracked; the rest of ~/.claude* is session state.
+  'claude-code/settings.json' => '.claude/settings.json',
+  'claude-code/settings-personal.json' => '.claude-personal/settings.json',
+  'claude-code/hooks/no-emdash-semicolon.py' => '.claude/hooks/no-emdash-semicolon.py',
 }
 
 desc "Symlink XDG-style configs (~/.config/...) into place."
