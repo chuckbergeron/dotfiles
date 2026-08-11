@@ -65,11 +65,13 @@ desktop-notifications = true
 
 # BEL handling: https://ghostty.org/docs/vt/control/bel
 #   attention - bounce the dock icon once when Ghostty is unfocused
-#   title     - prepend a bell emoji to the surface title, which marks the tab
-# Both clear as soon as the surface is focused or typed into. `border` is
-# deliberately off: it outlines the alerted surface, so without splits it only
-# appears once the tab is already open, which is too late to be a signal.
-bell-features = attention,title,audio,no-system,no-border
+#   audio     - the Tink tick configured below
+# Both features Ghostty enables by default are off on purpose:
+#   title  - hardcodes a bell emoji; the Claude Code Stop hook sets its own
+#            green circle marker via OSC 0 instead, so this would double up
+#   border - outlines the alerted surface, so without splits it only appears
+#            once the tab is already open, which is too late to be a signal
+bell-features = attention,audio,no-system,no-title,no-border
 
 # Tink is the shortest, softest stock macOS sound (0.56s). Volume is relative
 # to system volume; 0.15 is a quiet tick rather than an alert. Audition others
