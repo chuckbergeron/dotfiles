@@ -1,7 +1,44 @@
 require 'rake'
 
+# Configs that live under ~/.config/ rather than as ~/.dotfile, keyed by their
+# path in this repo. The :symlink convention below only covers ~/.<name>, so
+# XDG-style targets are listed explicitly. Add a line per new app.
+XDG_LINKS = {
+  'ghostty/config' => '.config/ghostty/config',
+}
+
+desc "Symlink XDG-style configs (~/.config/...) into place."
+task :install_config do
+  XDG_LINKS.each do |source, relative_target|
+    source_path = File.expand_path(source, __dir__)
+    target = File.join(ENV['HOME'], relative_target)
+
+    unless File.exist?(source_path)
+      puts "Missing source, skipping: #{source}"
+      next
+    end
+
+    # Already pointing where we want it.
+    next if File.symlink?(target) && File.readlink(target) == source_path
+
+    FileUtils.mkdir_p(File.dirname(target))
+
+    if File.symlink?(target)
+      puts "Repointing stale symlink: #{target}"
+      File.unlink(target)
+    elsif File.exist?(target)
+      backup = "#{target}.backup"
+      puts "Backing up #{target} -> #{backup}"
+      FileUtils.mv(target, backup)
+    end
+
+    File.symlink(source_path, target)
+    puts "Linked #{relative_target} -> #{source}"
+  end
+end
+
 desc "Hook our dotfiles into system-standard positions."
-task :install do
+task :install => :install_config do
   linkables = Dir.glob('*/**{.symlink}')
 
   skip_all = false
@@ -35,6 +72,12 @@ task :install do
 end
 
 task :uninstall do
+
+  XDG_LINKS.each do |source, relative_target|
+    target = File.join(ENV['HOME'], relative_target)
+    File.unlink(target) if File.symlink?(target)
+    FileUtils.mv("#{target}.backup", target) if File.exist?("#{target}.backup")
+  end
 
   Dir.glob('**/*.symlink').each do |linkable|
 

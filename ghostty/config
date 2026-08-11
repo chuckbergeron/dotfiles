@@ -59,3 +59,20 @@ window-save-state = always
 # (Ghostty only binds cmd+shift+[ / ] out of the box)
 keybind = super+shift+arrow_left=previous_tab
 keybind = super+shift+arrow_right=next_tab
+
+# Let apps (Claude Code, long builds) raise a notification via OSC 9 / OSC 777
+desktop-notifications = true
+
+# BEL handling: https://ghostty.org/docs/vt/control/bel
+#   attention - bounce the dock icon once when Ghostty is unfocused
+#   title     - prepend a bell emoji to the surface title, which marks the tab
+# Both clear as soon as the surface is focused or typed into. `border` is
+# deliberately off: it outlines the alerted surface, so without splits it only
+# appears once the tab is already open, which is too late to be a signal.
+bell-features = attention,title,audio,no-system,no-border
+
+# Tink is the shortest, softest stock macOS sound (0.56s). Volume is relative
+# to system volume; 0.15 is a quiet tick rather than an alert. Audition others
+# with: afplay -v 0.2 /System/Library/Sounds/Morse.aiff
+bell-audio-path = /System/Library/Sounds/Tink.aiff
+bell-audio-volume = 0.15
