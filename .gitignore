@@ -4,3 +4,15 @@ vim/vim.symlink/.netrwhist
 
 # Machine-local Claude Code state, not meant to be shared
 .claude/settings.local.json
+claude-code/settings.local.json
+
+# This repo is public. Guards against ever committing credentials or local
+# state from the AI tool config dirs, even by accident.
+cursor/mcp.json
+codex/auth.json
+codex/config.toml
+**/.claude.json
+**/.credentials.json
+claude-code/history.jsonl
+claude-code/projects/
+claude-code/sessions/

@@ -1,0 +1,30 @@
+---
+description: Use periods and commas in prose; avoid semicolons and em dashes in user-facing writing
+alwaysApply: true
+---
+
+# Prose punctuation
+
+In **prose** (chat replies, PR descriptions, docs, comments, commit messages, UI copy, error strings), do **not** use semicolons or em dashes. Use a period, comma, or two short sentences instead.
+
+This does **not** apply to required code syntax (e.g. `;` ending JavaScript/TypeScript statements, `for` loop headers, CSS).
+
+## Semicolons
+
+Prefer splitting or using a comma:
+
+- **Avoid:** `We fixed the CTA; it was failing silently.`
+- **Use:** `We fixed the CTA. It was failing silently.` or `We fixed the CTA, which was failing silently.`
+
+## Em dashes
+
+Do not use `—` or ` -- ` as a break in a sentence. Use a period, comma, colon, or parentheses:
+
+- **Avoid:** `Slot returns null — the button never renders.`
+- **Use:** `Slot returns null. The button never renders.` or `Slot returns null, so the button never renders.`
+
+Hyphens in compound words (`next-intl`, `well-known`) are fine.
+
+## When unsure
+
+Default to shorter sentences and simpler punctuation.

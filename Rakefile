@@ -1,19 +1,35 @@
 require 'rake'
 
-# Configs that live under ~/.config/ rather than as ~/.dotfile, keyed by their
-# path in this repo. The :symlink convention below only covers ~/.<name>, so
-# XDG-style targets are listed explicitly. Add a line per new app.
+# Configs that live somewhere other than ~/.<name>, so the :symlink convention
+# below cannot reach them. Keyed by target (relative to $HOME) so that one
+# tracked source can feed several targets. Add a line per new app.
+#
+# Only hand-authored config belongs here. Everything else in these tool dirs is
+# session state (history, projects, caches) or credentials, and this repo is
+# public. See README for what is deliberately excluded.
 XDG_LINKS = {
-  'ghostty/config' => '.config/ghostty/config',
-  # Only config is tracked; the rest of ~/.claude* is session state.
-  'claude-code/settings.json' => '.claude/settings.json',
-  'claude-code/settings-personal.json' => '.claude-personal/settings.json',
-  'claude-code/hooks/no-emdash-semicolon.py' => '.claude/hooks/no-emdash-semicolon.py',
+  '.config/ghostty/config' => 'ghostty/config',
+
+  # Claude Code, two accounts. Settings, skills, and memory are tracked per
+  # account so work and personal stay isolated; CLAUDE.md is shared.
+  '.claude/settings.json' => 'claude-code/settings.json',
+  '.claude-personal/settings.json' => 'claude-code/settings-personal.json',
+  '.claude/hooks/no-emdash-semicolon.py' => 'claude-code/hooks/no-emdash-semicolon.py',
+  '.claude/CLAUDE.md' => 'claude-code/CLAUDE.md',
+  '.claude-personal/CLAUDE.md' => 'claude-code/CLAUDE.md',
+  '.claude/skills' => 'claude-code/skills',
+  '.claude-personal/skills' => 'claude-code/skills-personal',
+  '.claude/memory' => 'claude-code/memory',
+  '.claude-personal/memory' => 'claude-code/memory-personal',
+
+  # Cursor. skills-cursor/ ships with the app, so it stays untracked.
+  '.cursor/rules' => 'cursor/rules',
+  '.cursor/skills' => 'cursor/skills',
 }
 
-desc "Symlink XDG-style configs (~/.config/...) into place."
+desc "Symlink configs that do not live at ~/.<name> into place."
 task :install_config do
-  XDG_LINKS.each do |source, relative_target|
+  XDG_LINKS.each do |relative_target, source|
     source_path = File.expand_path(source, __dir__)
     target = File.join(ENV['HOME'], relative_target)
 

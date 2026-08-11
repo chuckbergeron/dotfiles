@@ -29,6 +29,29 @@ $ `open ~/osx/charles.terminal`
 
 To use this new theme as the default, open Terminal's settings and make 'charles' the default.
 
+### AI tool config
+
+`claude-code/`, `cursor/` and `ghostty/` are symlinked into place by the
+`install_config` rake task, which `rake install` runs first. Targets are listed
+in `XDG_LINKS` at the top of the Rakefile. Add a line per new app.
+
+Claude Code runs under two accounts here (`~/.claude` for work,
+`~/.claude-personal`). Settings, skills and memory are tracked separately per
+account so the two stay isolated. `CLAUDE.md` is one file linked into both.
+
+**This repo is public, so only hand-authored config is tracked.** The following
+are deliberately excluded and should stay that way:
+
+- `~/.claude.json` and `~/.codex/auth.json`, which hold account and OAuth credentials
+- `~/.cursor/mcp.json`, which contains a plaintext MCP API key
+- `~/.codex/config.toml`, which has local absolute paths and private project names
+- session state everywhere else: `history.jsonl`, `projects/`, `sessions/`,
+  `file-history/`, `plans/`, `shell-snapshots/`, `telemetry/`, every `*cache*`
+- `~/.cursor/skills-cursor/`, which ships with Cursor rather than being ours
+
+Note that `memory/` is written by Claude Code at runtime, so new memories land
+in this working tree. Read them before committing.
+
 ### Further Reading
 
 Read the full docs here:

@@ -1,0 +1,25 @@
+---
+description: Tailwind className order — keep responsive variants directly after their base utility
+alwaysApply: true
+---
+
+# Tailwind responsive class order
+
+When writing or refactoring Tailwind CSS in `className` (and `cn()`) strings:
+
+1. **Place each breakpoint variant immediately after the base utility it overrides.** Do not insert unrelated classes between them.
+
+   - **Good:** `text-5xl sm:text-6xl`
+   - **Bad:** `text-5xl max-w-xl sm:text-6xl`
+   - **Good:** `max-w-lg sm:max-w-2xl text-5xl sm:text-6xl` (two pairs, each internally contiguous)
+   - **Good:** `text-base sm:text-lg text-secondary` (size pair, then color)
+
+2. **Do the same for spacing, layout, and other families** when a base has matching `sm:` / `md:` / `lg:` / `xl:` / `2xl:` variants:
+
+   - **Good:** `px-4 md:px-6 py-10 md:py-14`
+   - **Good:** `gap-4 sm:gap-6 sm:grid-cols-2` (gap pair before a grid-cols variant that only exists at `sm:`)
+
+3. **Arbitrary breakpoints** (`max-[380px]:`, `min-[…]:`, etc.) are variants of the same idea—keep them next to the related base utilities (e.g. `text-xs sm:text-sm max-[380px]:text-xs`, `px-3 max-[400px]:px-1`).
+
+4. **If Prettier / a Tailwind sort extension reorders classes** and breaks these pairs, fix the string to restore adjacency (this rule takes precedence over strict plugin ordering for readability in this repo).
+
