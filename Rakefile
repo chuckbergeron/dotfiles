@@ -91,6 +91,14 @@ task :install => :install_config do
   end
 end
 
+desc "Download the wallpaper set and install the rotation agent."
+task :wallpapers do
+  # Not part of :install. It pulls ~159 MB over the network, so it stays an
+  # explicit opt-in rather than something a fresh machine setup does silently.
+  sh File.expand_path('wallpapers/fetch.sh', __dir__)
+  sh "#{File.expand_path('wallpapers/rotation.sh', __dir__)} install"
+end
+
 task :uninstall do
 
   XDG_LINKS.each do |source, relative_target|

@@ -85,15 +85,14 @@ the result does not match what was asked for.
 | `set-wallpaper.sh` | Number-to-file wrapper, and random selection |
 | `rotation.sh` | Installs and manages the launchd rotation agent |
 
-## Optional: hook into rake
+## Rake
+
+```sh
+rake wallpapers   # fetch the images, then install the rotation agent
+```
 
 This module installs to `~/Pictures/Wallpapers` rather than a dotfile path, so
-it is not part of `XDG_LINKS`. To wire it into the Rakefile:
-
-```ruby
-desc "Download the wallpaper set, install the switcher and the rotation agent."
-task :wallpapers do
-  sh File.expand_path('wallpapers/fetch.sh', __dir__)
-  sh File.expand_path('wallpapers/rotation.sh', __dir__) + ' install'
-end
-```
+it is not part of `XDG_LINKS` and gets its own task. That task is deliberately
+not a dependency of `rake install`. It pulls about 159 MB over the network, so
+setting up a fresh machine should not trigger it silently. Both halves are
+idempotent, so re-running it is cheap.
