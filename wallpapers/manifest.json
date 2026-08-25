@@ -41,18 +41,6 @@
       "bytes": 1122802
     },
     {
-      "n": 4,
-      "file": "04-blue-vortex.jpg",
-      "name": "Blue Vortex",
-      "note": "Electric blue accretion spiral on violet.",
-      "set": "deep-space",
-      "resolution": "3840x2160",
-      "source": "https://w.wallhaven.cc/full/76/wallhaven-76jzde.jpg",
-      "credit_page": "https://wallhaven.cc/w/76jzde",
-      "sha256": "19d4b2f724967daf4289fb8614e6fce5b63c50d48249392bb6a4734e8e1d5e7d",
-      "bytes": 2241050
-    },
-    {
       "n": 5,
       "file": "05-pluto.jpg",
       "name": "Pluto",

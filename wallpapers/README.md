@@ -1,6 +1,6 @@
 # wallpapers
 
-A curated set of 37 wallpapers (4K and up) plus a switcher that sets the macOS
+A curated set of 36 wallpapers (4K and up) plus a switcher that sets the macOS
 desktop **and** lock screen together.
 
 ```sh
