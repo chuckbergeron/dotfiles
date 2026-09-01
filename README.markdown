@@ -63,6 +63,19 @@ are deliberately excluded and should stay that way:
   `file-history/`, `plans/`, `shell-snapshots/`, `telemetry/`, every `*cache*`
 - `~/.cursor/skills-cursor/`, which ships with Cursor rather than being ours
 
+The `autoMode` block in both settings files is deliberately untracked. Auto mode
+reads it only from `~/.claude/settings.json`, so it cannot live in a local
+override file, and its `environment` list names private repos, internal hosts,
+local paths and secret variable names. Both files therefore carry
+`git update-index --skip-worktree`, which keeps the real config on disk while
+git ignores changes to it. To commit a genuine settings change:
+
+```sh
+git update-index --no-skip-worktree claude-code/settings.json
+# edit, strip autoMode from the staged copy, commit, restore it on disk
+git update-index --skip-worktree claude-code/settings.json
+```
+
 Note that `memory/` is written by Claude Code at runtime, so new memories land
 in this working tree. Read them before committing.
 

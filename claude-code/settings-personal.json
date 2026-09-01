@@ -1,38 +1,39 @@
 {
-	"env": {
-		"CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN": "1",
-		"CLAUDE_CODE_DISABLE_MOUSE_CLICKS": "1"
-	},
-	"attribution": {
-		"commit": "",
-		"pr": ""
-	},
-	"permissions": {
-		"defaultMode": "acceptEdits"
-	},
-	"model": "sonnet",
-	"preferredNotifChannel": "terminal_bell",
-	"hooks": {
-		"Stop": [
-			{
-				"hooks": [
-					{
-						"type": "command",
-						"command": "printf '\\033]0;\\360\\237\\237\\242 %s\\007' \"${PWD##*/}\" > /dev/tty 2>/dev/null; printf '\\a' > /dev/tty 2>/dev/null || printf '\\a'"
-					}
-				]
-			}
-		],
-		"UserPromptSubmit": [
-			{
-				"hooks": [
-					{
-						"type": "command",
-						"command": "printf '\\033]0;%s\\007' \"${PWD##*/}\" > /dev/tty 2>/dev/null || true"
-					}
-				]
-			}
-		]
-	},
-	"theme": "dark-ansi"
+  "env": {
+    "CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN": "1",
+    "CLAUDE_CODE_DISABLE_MOUSE_CLICKS": "1"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "model": "sonnet",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "printf '\\033]0;\\360\\237\\237\\242 %s\\007' \"${PWD##*/}\" > /dev/tty 2>/dev/null; printf '\\a' > /dev/tty 2>/dev/null || printf '\\a'"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "printf '\\033]0;%s\\007' \"${PWD##*/}\" > /dev/tty 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  },
+  "theme": "dark-ansi",
+  "preferredNotifChannel": "terminal_bell",
+  "agentPushNotifEnabled": true
 }

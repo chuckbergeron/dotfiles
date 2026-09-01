@@ -8,7 +8,7 @@
     "pr": ""
   },
   "permissions": {
-    "defaultMode": "acceptEdits"
+    "defaultMode": "auto"
   },
   "model": "opus[1m]",
   "hooks": {
@@ -44,9 +44,9 @@
       }
     ]
   },
-  "preferredNotifChannel": "terminal_bell",
   "effortLevel": "medium",
   "tui": "default",
   "skipWorkflowUsageWarning": true,
-  "theme": "dark-ansi"
+  "theme": "dark-ansi",
+  "preferredNotifChannel": "terminal_bell"
 }
