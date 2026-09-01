@@ -29,6 +29,20 @@ $ `open ~/osx/charles.terminal`
 
 To use this new theme as the default, open Terminal's settings and make 'charles' the default.
 
+### Ghostty tab directories
+
+`window-save-state = always` in `ghostty/config` reopens windows, tabs and
+splits after a restart, but Ghostty starts every restored shell in the default
+directory. `zsh/ghostty-tab-cwd.zsh` closes that gap: it records each tab's cwd
+as it changes and hands the saved directories back to the tabs Ghostty reopens.
+It is sourced automatically by the `**/*.zsh` loop in `zsh/zshrc.symlink`, so
+there is nothing to enable.
+
+Restored tabs get the saved *set* of directories rather than a
+position-to-directory mapping, because a restored surface carries no identity
+across a restart. `ghostty-tabs` lists the saved set and `ghostty-tabs clear`
+empties it.
+
 ### AI tool config
 
 `claude-code/`, `cursor/` and `ghostty/` are symlinked into place by the
