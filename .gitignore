@@ -16,3 +16,4 @@ codex/config.toml
 claude-code/history.jsonl
 claude-code/projects/
 claude-code/sessions/
+claude-code/skills/synced/
