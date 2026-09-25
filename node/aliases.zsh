@@ -25,6 +25,20 @@ nrd() {
     rm -f node_modules/.pnpm-workspace-state-v1.json
     pnpm install || return
   fi
+  # A worktree under .worktrees/ has none of the gitignored env files. Link the
+  # main checkout's root .env plus each app's .env.local (where the Privy keys
+  # live since the root .envrc unsets them from the shell) so a worktree dev
+  # server sees the same env as the main checkout. Symlinks, so edits to the
+  # main files reach every worktree.
+  if [[ ${PWD:h:t} == .worktrees ]]; then
+    local main=${PWD:h:h} f
+    for f in .env .env.local apps/web/.env.local apps/telegram/.env.local; do
+      if [[ -f $main/$f && ! -e $f ]]; then
+        echo "nrd: linking $f from main checkout" >&2
+        ln -s "$main/$f" "$f"
+      fi
+    done
+  fi
   if [[ -z $target ]]; then
     npm run dev
   elif [[ $target == -* ]]; then

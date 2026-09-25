@@ -52,10 +52,16 @@ gh pr comment <number> --body "$(cat <<'EOF'
 <codex review output verbatim>
 
 ---
-*Local review via `codex review --base main`. Replace with the @codex GitHub App once it is working again.*
+*Local review via `codex exec --sandbox read-only`. Review only; no changes requested.*
 EOF
 )"
 ```
+
+**Never @-mention Codex in this comment.** Any `@codex` mention other than the exact
+standalone `@codex review` makes the Codex GitHub App treat the comment as a task:
+it starts fixing the findings and posts a work summary. This comment must contain
+no `@codex` text at all, including inside the pasted review output (replace any
+`@codex` with `Codex`).
 
 Post the full Codex output verbatim inside the comment. Do not summarize or trim it.
 

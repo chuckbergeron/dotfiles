@@ -1,8 +1,8 @@
 ---
 name: upsert-pr-with-checklist
 description: >-
-  Creates or updates a GitHub pull request with a standard changelog, summary (≤3
-  bullets), merge checklist, and mandatory @codex review in the PR body. Posts a
+  Creates or updates a GitHub pull request with a summary (≤3 bullets), merge
+  checklist, and mandatory @codex review in the PR body. Posts a
   separate @codex review comment only when updating an existing PR. Use when the
   user asks to open a PR, create a pull request, or run this skill by name.
 ---
@@ -34,10 +34,6 @@ If a PR already exists for the current branch: `gh pr view --json number,url,tit
 Use this structure exactly. Keep it short.
 
 ```markdown
-## Changelog
-
-<One or two sentences: what changed for users or operators.>
-
 ## Summary
 
 <One sentence: why this PR exists.>
@@ -64,8 +60,9 @@ Use this structure exactly. Keep it short.
 
 Rules:
 
-- **Changelog** and **Summary** are required; bullets are optional but capped at **3**.
+- **Summary** is required; bullets are optional but capped at **3**.
 - The **Checklist** block and the line **`@codex review`** after `---` are **required verbatim** — do not reword, remove, or make Codex optional.
+- `@codex review` must be the **only** `@codex` mention in the body, on its own line with nothing after it. We want Codex's review only, never its fixes: any other phrasing (e.g. `@codex review and fix`, `@codex please address`) starts a Codex task that edits code and posts a summary.
 - Title: concise, conventional when it fits (e.g. `Short description`). Include ticket id (e.g. as `ENG [ID#]`) if the branch or user context references one.
 
 ## 3. Create or update the PR
@@ -123,10 +120,16 @@ gh pr comment <number> --body "$(cat <<'EOF'
 <codex review output verbatim>
 
 ---
-*Local review via `codex review --base main`. Replace with the @codex GitHub App once it is working again.*
+*Local review via `codex exec --sandbox read-only`. Review only; no changes requested.*
 EOF
 )"
 ```
+
+**Never @-mention Codex in this comment.** Any `@codex` mention other than the exact
+standalone `@codex review` makes the Codex GitHub App treat the comment as a task:
+it starts fixing the findings and posts a work summary. This comment must contain
+no `@codex` text at all, including inside the pasted review output (replace any
+`@codex` with `Codex`).
 
 - Allow up to 5 minutes for Codex to run.
 - If the output is empty or the command fails, report the error but do not block the PR workflow.
@@ -140,8 +143,9 @@ Do not push with `--force` to `main`/`master` unless the user explicitly asks.
 
 ## Verification
 
-- [ ] PR body has Changelog, Summary, Checklist (verbatim), and `@codex review`
+- [ ] PR body has Summary, Checklist (verbatim), and `@codex review`
 - [ ] At most 3 summary bullets
 - [ ] Separate `@codex review` comment posted only if this was an existing PR update (not a new PR)
 - [ ] Local Codex review ran and was posted as a PR comment
+- [ ] The only `@codex` text anywhere is the exact line `@codex review` (PR body, and re-review comment on updates)
 - [ ] User received the PR link and review comment URL
